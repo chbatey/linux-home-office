@@ -1,0 +1,32 @@
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+   - name: Install base packages
+     yum: name={{ item }} state=present
+     with_items:
+      - emacs
+      - tmux
+      - gnome-tweak-tool
+      - mr
+      - vcsh
+      - htop
+      - zsh
+      - terminator
+      - ghc
+      - cabal-install
+      - sbt
+#      - dropbox
+      - java-1.8.0-openjdk-devel
+      - weechat
+   - name: Update cabal
+     command: cabal update
+   - name: Install cabal packages
+     command: cabal install -p {{ item }}
+     with_items:
+       - mtl
+
+- hosts: localhost
+  roles:
+    - { role: "repos", tags: [ "repos" ] }
+      
