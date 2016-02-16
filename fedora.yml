@@ -19,12 +19,25 @@
 #      - dropbox
       - java-1.8.0-openjdk-devel
       - weechat
+      - golang
+      - godep
+   tags:
+     - packages
+
+     
    - name: Update cabal
      command: cabal update
    - name: Install cabal packages
      command: cabal install -p {{ item }}
      with_items:
        - mtl
+
+   - name: Install go packages
+     command: go get {{ item }}
+     with_items:
+       - github.com/koron/maven-search
+     tags:
+       - golang
 
 - hosts: localhost
   roles:
