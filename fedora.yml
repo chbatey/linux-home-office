@@ -20,7 +20,7 @@
       - java-1.8.0-openjdk-devel
       - weechat
       - golang
-      - godep
+      - happy
    tags:
      - packages
 
@@ -31,11 +31,14 @@
      command: cabal install -p {{ item }}
      with_items:
        - mtl
+       - ghc-mod
+       - hasktags
 
    - name: Install go packages
      command: go get {{ item }}
      with_items:
        - github.com/koron/maven-search
+       - github.com/tools/godep
      tags:
        - golang
 
