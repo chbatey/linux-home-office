@@ -21,10 +21,6 @@
       - weechat
       - golang
       - happy
-   tags:
-     - packages
-
-     
    - name: Update cabal
      command: cabal update
    - name: Install cabal packages
