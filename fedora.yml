@@ -31,7 +31,11 @@
        - hasktags
 
    - name: Install go packages
-     command: go get {{ item }}
+     shell: go get {{ item }} 
+     args:
+       executable: /usr/bin/zsh
+     environment:
+       GOPATH: /home/chbatey/dev/gopath
      with_items:
        - github.com/koron/maven-search
        - github.com/tools/godep
