@@ -21,8 +21,11 @@
       - weechat
       - golang
       - happy
+      - hub
+      
    - name: Update cabal
      command: cabal update
+     
    - name: Install cabal packages
      command: cabal install -p {{ item }}
      with_items:
