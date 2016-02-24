@@ -45,6 +45,9 @@
      tags:
        - golang
 
+  - name: Install oh my zsh
+    shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 - hosts: localhost
   roles:
     - { role: "repos", tags: [ "repos" ] }
