@@ -5,6 +5,7 @@
    - name: Install base packages
      yum: name={{ item }} state=present
      with_items:
+        tig
       - emacs
       - tmux
       - gnome-tweak-tool
@@ -22,19 +23,18 @@
       - golang
       - happy
       - hub
-      
+
    - name: Update cabal
      command: cabal update
-     
+
    - name: Install cabal packages
      command: cabal install -p {{ item }}
      with_items:
        - mtl
        - ghc-mod
        - hasktags
-
    - name: Install go packages
-     shell: go get {{ item }} 
+     shell: go get {{ item }}
      args:
        executable: /usr/bin/zsh
      environment:
@@ -45,10 +45,10 @@
      tags:
        - golang
 
-  - name: Install oh my zsh
-    shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   - name: Install oh my zsh
+     shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 - hosts: localhost
   roles:
-    - { role: "repos", tags: [ "repos" ] }
-      
+    - { role: "work", tags: [ "work" ] }
+
