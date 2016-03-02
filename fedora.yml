@@ -34,6 +34,8 @@
        - mtl
        - ghc-mod
        - hasktags
+       - stylish-haskell
+       - hlint
    - name: Install go packages
      shell: go get {{ item }}
      args:
