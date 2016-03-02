@@ -28,14 +28,18 @@
    - name: Update cabal
      command: cabal update
 
+- hosts: localhost
+  sudo: no
+  tasks:
    - name: Install cabal packages
-     command: cabal install -p {{ item }}
+     shell: cabal install {{ item }} creates=~/.cabal/packages/hackage.haskell.org/{{ item }}
      with_items:
        - mtl
        - ghc-mod
        - hasktags
        - stylish-haskell
        - hlint
+
    - name: Install go packages
      shell: go get {{ item }}
      args:
