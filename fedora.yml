@@ -24,6 +24,7 @@
       - golang
       - happy
       - hub
+      - ant
 
    - name: Update cabal
      command: cabal update
@@ -60,3 +61,10 @@
   roles:
     - { role: "work", tags: [ "work" ] }
 
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - name: Install pip packages
+      pip: name=ccm
+      tags:
+        - python
