@@ -25,6 +25,7 @@
       - happy
       - hub
       - ant
+      - gradle
 
    - name: Update cabal
      command: cabal update
