@@ -26,6 +26,7 @@
       - hub
       - ant
       - gradle
+      - iftop
 
    - name: Update cabal
      command: cabal update
