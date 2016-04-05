@@ -27,6 +27,7 @@
       - ant
       - gradle
       - iftop
+      - vlc
 
    - name: Update cabal
      command: cabal update
