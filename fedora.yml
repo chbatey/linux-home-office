@@ -28,6 +28,7 @@
       - gradle
       - iftop
       - vlc
+      - cmake
 
    - name: Update cabal
      command: cabal update
