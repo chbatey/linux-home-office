@@ -29,6 +29,7 @@
       - iftop
       - vlc
       - cmake
+      - g++
 
    - name: Update cabal
      command: cabal update
