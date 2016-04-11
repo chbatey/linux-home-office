@@ -29,7 +29,10 @@
       - iftop
       - vlc
       - cmake
-      - g++
+      - gcc-c++
+      - docker-compose
+     tags:
+      - yum
 
    - name: Update cabal
      command: cabal update
