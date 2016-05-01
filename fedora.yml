@@ -30,8 +30,10 @@
       - vlc
       - cmake
       - gcc-c++
+      - docker
       - docker-compose
       - sysstat
+      - discount
      tags:
       - yum
 
