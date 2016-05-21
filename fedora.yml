@@ -34,6 +34,10 @@
       - docker-compose
       - sysstat
       - discount
+      - freetype
+      - python-freetype
+      - freetype-devel
+      - libpng-devel
      tags:
       - yum
 
@@ -79,3 +83,6 @@
       pip: name=ccm
       tags:
         - python
+        - spipy
+        - jupyter
+        - matplotlib
