@@ -36,6 +36,7 @@
       - freetype-devel
       - libpng-devel
       - strace
+      - R
      tags:
       - yum
 
