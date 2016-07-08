@@ -36,6 +36,10 @@
       - freetype-devel
       - libpng-devel
       - strace
+      - ngrep
+      - texlive
+      - texlive-smartdiagram
+      - kile
      tags:
       - yum
 
