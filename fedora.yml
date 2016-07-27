@@ -45,6 +45,10 @@
       - luajit-devel
       - ctags
       - python-devel
+      - ngrep
+      - texlive
+      - texlive-smartdiagram
+      - kile
      tags:
       - yum
 
