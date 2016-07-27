@@ -37,6 +37,14 @@
       - libpng-devel
       - strace
       - R
+      - ruby
+      - ruby-devel
+      - lua
+      - lua-devel
+      - luajit
+      - luajit-devel
+      - ctags
+      - python-devel
      tags:
       - yum
 
