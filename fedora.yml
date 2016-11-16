@@ -72,12 +72,21 @@
      args:
        executable: /usr/bin/zsh
      environment:
-       GOPATH: /home/chbatey/dev/gopath
+      GOPATH: /home/chbatey/dev/gopath
      with_items:
-       - github.com/koron/maven-search
-       - github.com/tools/godep
+        - github.com/koron/maven-search
+        - github.com/tools/godep
      tags:
-       - golang
+        - golang
+
+   - name: Install rust packages
+     shell: cargo install {{ item }}
+     args:
+      executable: /usr/bin/zsh
+      with_items:
+        - racer
+      tags:
+        - rust
 
    - name: Install oh my zsh
      shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
