@@ -5,6 +5,9 @@
    - name: Install base packages
      yum: name={{ item }} state=present
      with_items:
+      - clang
+      - clag-devel
+      - global
       - autojump-zsh
       - tig
       - emacs
