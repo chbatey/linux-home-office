@@ -52,6 +52,7 @@
       - texlive
       - texlive-smartdiagram
       - kile
+      - tkinter
      tags:
       - yum
 
