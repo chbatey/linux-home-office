@@ -53,6 +53,7 @@
       - texlive-smartdiagram
       - kile
       - tkinter
+      - "@Development tools"
      tags:
       - yum
 
@@ -70,6 +71,11 @@
        - hasktags
        - stylish-haskell
        - hlint
+
+   - name: Install Gems
+     shell: gem install {{ item }}
+     with_items:
+       - jekyll
 
    - name: Install go packages
      shell: go get {{ item }}
