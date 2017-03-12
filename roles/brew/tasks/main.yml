@@ -1,0 +1,8 @@
+- name: Check if brew exists 
+  stat:
+    path: ~/.linuxbrew/bin/brew
+  register: brew_file
+
+- name: Install brew for linux
+  command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  when: brew_file == False

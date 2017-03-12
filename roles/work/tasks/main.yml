@@ -1,2 +1,0 @@
-- name: Install systemd dev libraries for work on owl
-  yum: name=systemd-devel state=present 
