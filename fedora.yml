@@ -54,6 +54,7 @@
       - kile
       - tkinter
       - "@Development tools"
+      - okular
      tags:
       - yum
 
