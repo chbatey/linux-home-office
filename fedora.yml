@@ -6,7 +6,6 @@
      yum: name={{ item }} state=present
      with_items:
       - clang
-      - clag-devel
       - global
       - autojump-zsh
       - tig
@@ -78,27 +77,6 @@
      with_items:
        - jekyll
 
-   - name: Install go packages
-     shell: go get {{ item }}
-     args:
-       executable: /usr/bin/zsh
-     environment:
-      GOPATH: /home/chbatey/dev/gopath
-     with_items:
-        - github.com/koron/maven-search
-        - github.com/tools/godep
-     tags:
-        - golang
-
-   - name: Install rust packages
-     shell: cargo install {{ item }}
-     args:
-      executable: /usr/bin/zsh
-      with_items:
-        - racer
-      tags:
-        - rust
-
    - name: Install oh my zsh
      shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -121,12 +99,15 @@
   sudo: yes
   roles:
     - vscode
+    - intellij
   tags:
-    - vscode
+    - root_user
 
 # Roles to run as your user
 - hosts: localhost
   roles:
     - brew
+    - stack
+    - shell
   tags:
-    - brew
+    - not_root
