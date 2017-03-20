@@ -4,5 +4,5 @@
   register: brew_file
 
 - name: Install brew for linux
-  command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-  when: brew_file == False
+  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  when: brew_file.stat.exists == False

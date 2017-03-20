@@ -1,0 +1,11 @@
+- name: Check if stack exists 
+  stat:
+    path: ~/.stack/bin/stack
+  register: stack_file
+
+- debug:
+    var: stack_file
+
+- name: Install brew for linux
+  shell: curl -sSL https://get.haskellstack.org/ | sh 
+  when: stack_file.stat.exists == False

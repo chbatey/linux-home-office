@@ -1,0 +1,19 @@
+- name: Check if intellij  exists 
+  stat:
+    path: /opt/idea/
+  register: intellij
+
+- name: Download intellij
+  unarchive:
+    src: "https://download.jetbrains.com/idea/{{ intellij_version }}.tar.gz"
+    dest: /opt/
+    creates: "/opt/idea"
+    remote_src: True
+
+- name: Symlink
+  file:
+    src: "/opt/{{ intellij_build }}"
+    dest: /opt/idea
+    state: link
+
+
