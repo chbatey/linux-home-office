@@ -1,11 +1,19 @@
 - name: Check if stack exists 
   stat:
-    path: ~/.stack/bin/stack
+    path: ~/.stack/
   register: stack_file
 
 - debug:
     var: stack_file
 
-- name: Install brew for linux
+- name: Install stack for linux
   shell: curl -sSL https://get.haskellstack.org/ | sh 
   when: stack_file.stat.exists == False
+
+- name: Install some standard packages
+  command: stack install {{ item }}
+  with_items:
+    - hlint
+    - stylish-haskell
+    - hindent
+    - ghc-mod
