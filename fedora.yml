@@ -5,6 +5,7 @@
    - name: Install base packages
      yum: name={{ item }} state=present
      with_items:
+      - wireshark
       - clang
       - global
       - autojump-zsh
@@ -100,6 +101,7 @@
   roles:
     - vscode
     - intellij
+    - clion
   tags:
     - root_user
 

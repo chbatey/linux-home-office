@@ -1,4 +1,4 @@
-- name: Check if intellij  exists 
+- name: Check if intellij  exists
   stat:
     path: /opt/idea/
   register: intellij
