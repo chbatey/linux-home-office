@@ -5,6 +5,7 @@
    - name: Install base packages
      yum: name={{ item }} state=present
      with_items:
+      - perf
       - wireshark
       - clang
       - global
