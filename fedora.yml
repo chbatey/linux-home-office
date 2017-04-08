@@ -98,6 +98,7 @@
 - hosts: localhost
   sudo: yes
   roles:
+    - {role: "xmonad", tags: [ "xmonad" ] }
     - vscode
     - intellij
   tags:
