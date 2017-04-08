@@ -1,0 +1,15 @@
+- name: Install all the packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - xbacklight
+    - xmonad
+    - ghc-xmonad-contrib-devel
+    - xmonad-mate
+    - feh
+    - stalonetray
+    - dmenu
+    - xscreensaver
+    - xmobar
+    - NetworkManager-tui
