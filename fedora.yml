@@ -19,8 +19,6 @@
       - htop
       - zsh
       - terminator
-      - ghc
-      - cabal-install
       - sbt
       - java-1.8.0-openjdk-devel
       - weechat
@@ -58,21 +56,6 @@
       - okular
      tags:
       - yum
-
-   - name: Update cabal
-     command: cabal update
-
-- hosts: localhost
-  sudo: no
-  tasks:
-   - name: Install cabal packages
-     shell: cabal install {{ item }} creates=~/.cabal/packages/hackage.haskell.org/{{ item }}
-     with_items:
-       - mtl
-       - ghc-mod
-       - hasktags
-       - stylish-haskell
-       - hlint
 
    - name: Install Gems
      shell: gem install {{ item }}
