@@ -3,6 +3,7 @@
     name: "{{ item }}"
     state: present
   with_items:
+    - xbacklight
     - xmonad
     - ghc-xmonad-contrib-devel
     - xmonad-mate
