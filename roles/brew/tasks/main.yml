@@ -6,3 +6,7 @@
 - name: Install brew for linux
   shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
   when: brew_file.stat.exists == False
+
+- name: Install modules
+  shell: brew install {{ item }}
+  with_items: modules

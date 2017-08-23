@@ -38,7 +38,6 @@
       - freetype-devel
       - libpng-devel
       - strace
-      - R
       - ruby
       - ruby-devel
       - lua
