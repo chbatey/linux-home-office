@@ -53,6 +53,7 @@
       - tkinter
       - "@Development tools"
       - okular
+      - graphviz
      tags:
       - yum
 
@@ -63,6 +64,8 @@
 
    - name: Install oh my zsh
      shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+     tags:
+       - shell
 
 - hosts: localhost
   sudo: yes
@@ -82,7 +85,7 @@
 - hosts: localhost
   sudo: yes
   roles:
-    - {role: "xmonad", tags: [ "xmonad" ] }
+          #- {role: "xmonad", tags: [ "xmonad" ] }
     - vscode
     - intellij
     - clion
@@ -97,3 +100,4 @@
     - shell
   tags:
     - not_root
+    - shell
