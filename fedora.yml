@@ -53,6 +53,7 @@
       - tkinter
       - "@Development tools"
       - okular
+      - python2-virtualenv
       - graphviz
      tags:
       - yum
@@ -68,16 +69,20 @@
        - shell
 
 - hosts: localhost
-  sudo: yes
+  sudo: no
   tasks:
     - name: Install pip packages
-      pip: name={{ item }} state=present
+      pip: 
+        name: "{{ item }}" 
+        state: present 
+        extra_args: --user
       with_items:  
         - python
         - jupyter
         - matplotlib
         - plotly
         - ccm
+        - blockade
       tags:
         - python
 
