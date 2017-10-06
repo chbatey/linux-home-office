@@ -55,6 +55,7 @@
       - okular
       - python2-virtualenv
       - graphviz
+      - gitk
      tags:
       - yum
 
