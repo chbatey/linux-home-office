@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
-  sudo: yes
-  tasks:
    - name: Install base packages
      yum: name={{ item }} state=present
      with_items:
@@ -57,6 +55,7 @@
       - graphviz
       - gitk
       - ant-juint # for cassandra build
+      - powertop
      tags:
       - yum
 
