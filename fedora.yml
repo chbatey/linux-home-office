@@ -1,8 +1,22 @@
 ---
+# TODO this doesn't work for DNF
 - hosts: localhost
+  become: yes
+  tasks:
+   - name: Add docker CE repo
+     yum_repository:
+       name: docker-ce
+       description: DOcker CE repo 
+       baseurl: https://download.docker.com/linux/fedora/docker-ce.repo
+     tags:
+      - yum-repos
+
+- hosts: localhost
+  become: yes
+  tasks:
    - name: Install base packages
-     yum: name={{ item }} state=present
-     with_items:
+     dnf: name={{ item }} state=present
+     with_items: 
       - perf
       - wireshark
       - clang
@@ -27,8 +41,6 @@
       - iftop
       - cmake
       - gcc-c++
-      - docker-engine
-      - docker-compose
       - sysstat
       - discount
       - freetype
@@ -54,8 +66,11 @@
       - python2-virtualenv
       - graphviz
       - gitk
-      - ant-juint # for cassandra build
       - powertop
+      - dnf-plugins-core
+      - docker-ce
+      - elfutils-libelf-devel # for virtual box
+      - dstat
      tags:
       - yum
 
@@ -87,22 +102,9 @@
       tags:
         - python
 
-# Roles that require root
-- hosts: localhost
-  sudo: yes
-  roles:
-          #- {role: "xmonad", tags: [ "xmonad" ] }
-    - vscode
-    - intellij
-    - clion
-  tags:
-    - root_user
-
 # Roles to run as your user
 - hosts: localhost
   roles:
-    - brew
-    - stack
     - shell
   tags:
     - not_root
