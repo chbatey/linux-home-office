@@ -1,19 +1,19 @@
 - name: Check if intellij  exists
   stat:
-    path: /opt/idea/
+    path: "{{ home_dir }}apps/idea/"
   register: intellij
 
 - name: Download intellij
   unarchive:
     src: "https://download.jetbrains.com/idea/{{ intellij_version }}.tar.gz"
-    dest: /opt/
-    creates: "/opt/idea"
+    dest: "{{ home_dir }}apps/"
+    creates: "{{ home_dir}}/apps/{{ intellij_build }}/"
     remote_src: True
 
 - name: Symlink
   file:
-    src: "/opt/{{ intellij_build }}"
-    dest: /opt/idea
+    src: "{{ home_dir }}apps/{{ intellij_build }}"
+    dest: "{{ home_dir }}apps/idea"
     state: link
 
 
