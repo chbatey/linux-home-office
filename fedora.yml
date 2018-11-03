@@ -64,11 +64,6 @@
      with_items:
        - jekyll
 
-   - name: Install oh my zsh
-     shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-     tags:
-       - shell
-
 - hosts: localhost
   tasks:
     - name: Install pip packages
@@ -86,14 +81,6 @@
       tags:
         - python
 
-# Roles to run as your user
-- hosts: localhost
-  roles:
-    - shell
-  tags:
-    - not_root
-    - shell
-
 - hosts: localhost
   become: yes
   roles:
@@ -104,6 +91,7 @@
 - hosts: localhost
   become: no
   roles:
+    - shell
     - intellij
   tags:
     - test
