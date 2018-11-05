@@ -1,0 +1,16 @@
+- name: Create apps directory 
+  file: path="{{ home_dir }}/apps" state=directory
+
+- name: Check if jabba exists
+  stat:
+    path: "{{ home_dir }}.jabba/"
+  register: jabba
+
+- name: Install jabba
+  shell: curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+  when: jabba.stat.exists == False
+
+  # jabba install is idempotent
+- name: Install JDKs
+  shell: "{{ home_dir }}.jabba/bin/jabba install {{ item }}"
+  with_items: "{{ jdks }}"

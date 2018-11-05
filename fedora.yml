@@ -85,12 +85,11 @@
   become: yes
   roles:
     - docker
-  tags:
-    - test 
 
 - hosts: localhost
   become: no
   roles:
+    - jabba
     - shell
     - intellij
   tags:

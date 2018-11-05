@@ -1,3 +1,6 @@
+- name: Create apps directory 
+  file: path="{{ home_dir }}/apps" state=directory
+
 - name: Check if intellij  exists
   stat:
     path: "{{ home_dir }}apps/idea/"
