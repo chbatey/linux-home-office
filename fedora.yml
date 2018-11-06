@@ -55,7 +55,7 @@
       - powertop
       - dnf-plugins-core
       - elfutils-libelf-devel # for virtual box
-      - dstat
+      - pcp-system-tools # contains dstat
      tags:
       - yum
 
