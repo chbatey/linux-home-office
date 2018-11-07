@@ -1,4 +1,11 @@
 ---
+- hosts: localhost 
+  become: no
+  roles:
+    - apps
+  tags:
+    - always 
+
 - hosts: localhost
   become: yes
   tasks:
@@ -56,6 +63,7 @@
       - dnf-plugins-core
       - elfutils-libelf-devel # for virtual box
       - pcp-system-tools # contains dstat
+      - gtk-v4l # web cam settings
      tags:
       - yum
 
@@ -92,5 +100,11 @@
     - jabba
     - shell
     - intellij
+
+- hosts: localhost
+  become: no
+  roles:
+    - kubernetes 
   tags:
     - test
+

@@ -1,0 +1,8 @@
+- name: Create apps directory 
+  file: path="{{ home_dir }}/apps" state=directory
+
+- name: Create bin directory 
+  file: path="{{ home_dir }}/apps/bin" state=directory
+
+
+
