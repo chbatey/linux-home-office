@@ -62,15 +62,18 @@
       - powertop
       - dnf-plugins-core
       - elfutils-libelf-devel # for virtual box
-      - pcp-system-tools # contains dstat
       - gtk-v4l # web cam settings
      tags:
       - yum
 
+- hosts: localhost
+  become: yes
+  tasks:
    - name: Install Gems
      shell: gem install {{ item }}
      with_items:
-       - jekyll
+      - jekyll
+      - travis
 
 - hosts: localhost
   tasks:
@@ -100,11 +103,12 @@
     - jabba
     - shell
     - intellij
+    - kubernetes 
 
 - hosts: localhost
   become: no
   roles:
-    - kubernetes 
+    - nix
   tags:
     - test
 

@@ -1,0 +1,12 @@
+- name: Check if nix is installed 
+  stat:
+    path: ~/.nix-profile/
+  register: nix 
+
+- name: Install brew for linux
+  shell: curl https://nixos.org/nix/install | sh 
+  when: nix.stat.exists == False
+
+- name: Install modules
+  shell: nix-env -i  {{ item }}
+  with_items: "{{ packages }}"
