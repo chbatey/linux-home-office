@@ -1,1 +1,1 @@
-ansible-playbook -i hosts fedora.yml --ask-become-pass -vvv "$@"
+ansible-playbook -i hosts workstation.yml --ask-become-pass -vvv "$@"

@@ -8,5 +8,6 @@
   when: nix.stat.exists == False
 
 - name: Install modules
-  shell: nix-env -i  {{ item }}
+  shell: ~/.nix-profile/bin/nix-env -q | grep {{ item }} ||  ~/.nix-profile/bin/nix-env -i  {{ item }}
   with_items: "{{ packages }}"
+  ignore_errors: yes

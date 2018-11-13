@@ -1,2 +1,29 @@
 packages:
   - dstat  
+  - wireshark-qt
+  - okular
+  - powertop
+  - htop
+  - zsh
+  - autojump
+  - vcsh
+  - terminator
+  - tmux
+  - strace
+  - tig
+  - gradle
+  - sysstat
+  - ruby
+  - gcc
+  - cmake
+  - iftop
+  - ngrep
+  - graphviz
+  - freetype
+  - virtualbox
+  - ant
+  - perf-linux
+  - mr
+  - hub
+  - gnome-tweaks
+  - guvcview

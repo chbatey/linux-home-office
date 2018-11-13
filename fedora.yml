@@ -1,11 +1,4 @@
 ---
-- hosts: localhost 
-  become: no
-  roles:
-    - apps
-  tags:
-    - always 
-
 - hosts: localhost
   become: yes
   tasks:
@@ -13,85 +6,9 @@
      dnf: name={{ item }} state=present
      with_items: 
       - dnf-plugins-core
-      - perf
-      - wireshark
-      - clang
-      - global
-      - autojump-zsh
-      - tig
-      - tmux
-      - gnome-tweak-tool
-      - mr
-      - vcsh
-      - htop
-      - zsh
-      - terminator
-      - sbt
-      - happy
-      - hub
-      - ant
-      - gradle
-      - iftop
-      - cmake
-      - gcc-c++
-      - sysstat
-      - discount
-      - freetype
-      - python-freetype
-      - freetype-devel
-      - libpng-devel
-      - strace
-      - ruby
-      - ruby-devel
-      - lua
-      - lua-devel
-      - luajit
-      - luajit-devel
-      - ctags
-      - python-devel
-      - ngrep
-      - texlive
-      - texlive-smartdiagram
-      - kile
-      - tkinter
       - "@Development tools"
-      - okular
-      - python2-virtualenv
-      - graphviz
-      - gitk
-      - powertop
-      - dnf-plugins-core
-      - elfutils-libelf-devel # for virtual box
-      - gtk-v4l # web cam settings
-     tags:
-      - yum
 
-- hosts: localhost
-  become: yes
-  tasks:
-   - name: Install Gems
-     shell: gem install {{ item }}
-     with_items:
-      - jekyll
-      - travis
-
-- hosts: localhost
-  tasks:
-    - name: Install pip packages
-      pip: 
-        name: "{{ item }}" 
-        state: present 
-        extra_args: --user
-      with_items:  
-        - python
-        - jupyter
-        - matplotlib
-        - plotly
-        - ccm
-        - blockade
-      tags:
-        - python
-
+# TODO this is currently fedora specific
 - hosts: localhost
   become: yes
   roles:
@@ -100,15 +17,5 @@
 - hosts: localhost
   become: no
   roles:
-    - jabba
-    - shell
-    - intellij
-    - kubernetes 
-
-- hosts: localhost
-  become: no
-  roles:
-    - nix
-  tags:
-    - test
+    - kubernetes # todo don't install this if RAM < 32GB and put in main
 

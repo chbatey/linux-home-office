@@ -1,0 +1,54 @@
+---
+- hosts: localhost 
+  become: no
+  roles:
+    - apps
+  tags:
+    - always 
+
+- include: fedora.yml
+  when: ansible_distribution == "Fedora"
+  tags:
+    - fedora
+
+- include: ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+  tags:
+    - ubuntu 
+
+# TODO move to role
+- hosts: localhost
+  become: yes
+  tasks:
+   - name: Install Gems
+     shell: gem install {{ item }}
+     with_items:
+      - jekyll
+      - travis
+
+# TODO move to role
+- hosts: localhost
+  tasks:
+    - name: Install pip packages
+      pip: 
+        name: "{{ item }}" 
+        state: present 
+        extra_args: --user
+      with_items:  
+        - python
+        - jupyter
+        - matplotlib
+        - plotly
+        - ccm
+        - blockade
+      tags:
+        - python
+
+- hosts: localhost
+  become: no
+  roles:
+    - nix
+    - jabba
+    - shell
+    - intellij
+
