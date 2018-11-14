@@ -25,14 +25,14 @@
     - intellij
 
 # TODO move to role
-#- hosts: localhost
-#  become: yes
-#  tasks:
-#   - name: Install Gems
-#     shell: /home/chbatey/.nix-profile/bin/gem install {{ item }}
-#     with_items:
-#      - jekyll
-#      - travis
+- hosts: localhost
+  become: yes
+  tasks:
+   - name: Install Gems
+     shell: gem install {{ item }}
+     with_items:
+      - jekyll
+      - travis
 
 # TODO move to role
 - hosts: localhost
