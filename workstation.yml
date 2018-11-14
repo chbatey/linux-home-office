@@ -15,16 +15,24 @@
   when: ansible_distribution == "Ubuntu"
   tags:
     - ubuntu 
+      
+- hosts: localhost
+  become: no
+  roles:
+    - nix
+    - jabba
+    - shell
+    - intellij
 
 # TODO move to role
-- hosts: localhost
-  become: yes
-  tasks:
-   - name: Install Gems
-     shell: gem install {{ item }}
-     with_items:
-      - jekyll
-      - travis
+#- hosts: localhost
+#  become: yes
+#  tasks:
+#   - name: Install Gems
+#     shell: /home/chbatey/.nix-profile/bin/gem install {{ item }}
+#     with_items:
+#      - jekyll
+#      - travis
 
 # TODO move to role
 - hosts: localhost
@@ -44,11 +52,4 @@
       tags:
         - python
 
-- hosts: localhost
-  become: no
-  roles:
-    - nix
-    - jabba
-    - shell
-    - intellij
 

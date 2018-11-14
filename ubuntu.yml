@@ -5,4 +5,9 @@
    - name: Install base packages
      apt: name={{ item }} state=present
      with_items: 
-       - todo-what
+       - zsh 
+       - curl
+       - terminator
+       - ruby 
+       - gem
+       - ruby-dev
