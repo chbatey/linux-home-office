@@ -11,3 +11,4 @@
        - ruby 
        - gem
        - ruby-dev
+       - gnome-shell-pomodoro

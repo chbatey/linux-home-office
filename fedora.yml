@@ -5,6 +5,9 @@
    - name: Install base packages
      dnf: name={{ item }} state=present
      with_items: 
+      - zsh 
+      - tmux
+      - gnome-shell-pomodoro
       - dnf-plugins-core
       - "@Development tools"
 
