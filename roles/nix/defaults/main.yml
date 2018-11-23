@@ -18,7 +18,6 @@ packages:
   - ngrep
   - graphviz
   - freetype
-  - virtualbox
   - ant
   - perf-linux
   - mr
