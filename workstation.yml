@@ -23,6 +23,8 @@
     - jabba
     - shell
     - intellij
+  tags:
+    - nosudo
 
 # TODO move to role
 - hosts: localhost
