@@ -13,3 +13,4 @@
        - ruby-dev
        - gnome-shell-pomodoro
        - nautilus-dropbox
+       - graphviz

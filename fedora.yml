@@ -7,6 +7,7 @@
      with_items: 
       - zsh 
       - tmux
+      - graphviz
       - gnome-shell-pomodoro
       - dnf-plugins-core
       - "@Development tools"

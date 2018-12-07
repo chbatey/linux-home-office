@@ -16,7 +16,6 @@ packages:
   - cmake
   - iftop
   - ngrep
-  - graphviz
   - freetype
   - ant
   - perf-linux
