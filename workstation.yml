@@ -26,6 +26,14 @@
   tags:
     - nosudo
 
+- hosts: localhost
+  become: yes
+  roles:
+    - brew
+  tags:
+    - brew
+
+
 # TODO move to role
 - hosts: localhost
   become: yes

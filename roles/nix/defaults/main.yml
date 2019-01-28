@@ -1,6 +1,5 @@
 packages:
   - dstat  
-  - wireshark-qt
   - okular
   - htop
   - zsh
