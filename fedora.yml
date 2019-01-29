@@ -17,6 +17,8 @@
   become: yes
   roles:
     - docker
+  tags:
+    - docker
 
 - hosts: localhost
   become: no
