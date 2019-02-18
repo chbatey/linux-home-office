@@ -1,3 +1,4 @@
 modules:
-  - hello
-  - npm
+  - maven
+  - sbt
+  - gralde
