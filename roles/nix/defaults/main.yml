@@ -7,7 +7,6 @@ packages:
   - vcsh
   - strace
   - tig
-  - gradle
   - sysstat
   - ruby
   - cmake
@@ -20,4 +19,3 @@ packages:
   - hub
   - gnome-tweaks
   - guvcview
-  - sbt
