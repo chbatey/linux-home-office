@@ -6,4 +6,23 @@
 - name: Install oh my zsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   when: ohmy.stat.exists == False
-  
+
+- name: Check of scm breeze is installed
+  stat:
+    path: ~/.scm_breeze
+  register: scm
+
+- name: Clone scm breeze
+  git:
+    repo: git://github.com/scmbreeze/scm_breeze.git 
+    dest: ~/.scm_breeze
+  when: scm.stat.exists == False
+
+- name: Install scm breeze
+  shell: ~/.scm_breeze/install.sh
+  when: scm.stat.exists == False
+
+- name: Clone dot files
+  shell: vcsh clone git@github.com:chbatey/dot-files.git
+
+ 

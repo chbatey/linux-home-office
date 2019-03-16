@@ -15,24 +15,25 @@
   when: ansible_distribution == "Ubuntu"
   tags:
     - ubuntu 
-      
+
 - hosts: localhost
   become: no
   roles:
-    - nix
     - jabba
     - shell
     - intellij
+    - brew
   tags:
-    - nosudo
+    - shell
 
 - hosts: localhost
-  become: yes
+  become: no
   roles:
+    - jabba
+    - intellij
     - brew
   tags:
-    - brew
-
+    - nosudo
 
 # TODO move to role
 - hosts: localhost

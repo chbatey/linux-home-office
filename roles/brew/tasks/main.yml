@@ -1,6 +1,6 @@
 - name: Check if brew exists 
   stat:
-    path: ~/.linuxbrew/bin/brew
+    path: /home/linuxbrew/.linuxbrew/bin/brew
   register: brew_file
 
 - name: Install brew for linux
@@ -8,5 +8,5 @@
   when: brew_file.stat.exists == False
 
 - name: Install modules
-  shell: brew install {{ item }}
-  with_items: modules
+  shell: /home/linuxbrew/.linuxbrew/bin/brew install {{ item }}
+  with_items:  "{{ modules }}"

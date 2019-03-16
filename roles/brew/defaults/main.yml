@@ -1,4 +1,4 @@
 modules:
   - maven
+  - gradle
   - sbt
-  - gralde

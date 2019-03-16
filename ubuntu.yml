@@ -5,6 +5,7 @@
    - name: Install base packages
      apt: name={{ item }} state=present
      with_items: 
+       - build-essential
        - zsh 
        - curl
        - terminator
@@ -18,3 +19,7 @@
        - virtualbox-ext-pack
        - wireshark 
        - lshw
+       - tmux
+       - vcsh
+       - mr 
+       - gnome-tweaks
