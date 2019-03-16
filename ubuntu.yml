@@ -24,3 +24,6 @@
        - mr 
        - gnome-tweaks
        - autojump
+       - powertop
+       - tlp
+       - tlp-rdw
