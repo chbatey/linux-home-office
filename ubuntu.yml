@@ -27,3 +27,5 @@
        - powertop
        - tlp
        - tlp-rdw
+       - wireshark
+       - jq
