@@ -29,3 +29,4 @@
        - tlp-rdw
        - wireshark
        - jq
+       - linux-tools
