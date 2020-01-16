@@ -34,3 +34,4 @@
        - wireshark
        - jq
        - linux-tools
+       - xsel # for tmux yank
