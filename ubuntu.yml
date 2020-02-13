@@ -35,3 +35,5 @@
        - jq
        - linux-tools
        - xsel # for tmux yank
+       - maildir-utils # mu for emancs 
+       - isync # download email
