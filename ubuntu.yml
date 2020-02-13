@@ -36,4 +36,5 @@
        - linux-tools
        - xsel # for tmux yank
        - maildir-utils # mu for emancs 
+       - mu4e
        - isync # download email
